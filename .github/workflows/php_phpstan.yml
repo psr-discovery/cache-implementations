@@ -1,12 +1,13 @@
+name: "PHPStan"
+
 on:
-  pull_request_target:
+  pull_request_target: {}
   push:
     branches:
       - 1.x
 
 jobs:
   phpstan:
-    name: PHPStan
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:

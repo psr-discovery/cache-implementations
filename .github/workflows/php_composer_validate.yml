@@ -1,12 +1,13 @@
+name: "Composer Validate"
+
 on:
-  pull_request_target:
+  pull_request_target: {}
   push:
     branches:
       - 1.x
 
 jobs:
   validate:
-    name: Composer Validate
     runs-on: ubuntu-latest
 
     steps:

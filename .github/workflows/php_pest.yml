@@ -1,12 +1,13 @@
+name: "PEST"
+
 on:
-  pull_request_target:
+  pull_request_target: {}
   push:
     branches:
       - 1.x
 
 jobs:
   pest:
-    name: PEST
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:

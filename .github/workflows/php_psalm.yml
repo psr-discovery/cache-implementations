@@ -1,12 +1,13 @@
+name: "Psalm"
+
 on:
-  pull_request_target:
+  pull_request_target: {}
   push:
     branches:
       - 1.x
 
 jobs:
   psalm:
-    name: Psalm
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:
