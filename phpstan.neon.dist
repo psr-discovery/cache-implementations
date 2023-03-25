@@ -1,0 +1,15 @@
+includes:
+    - ./vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    level: max
+
+    paths:
+        - src
+
+    bootstrapFiles:
+
+    ignoreErrors:
+
+    reportUnmatchedIgnoredErrors: true
+    treatPhpDocTypesAsCertain: false
