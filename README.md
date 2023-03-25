@@ -1,6 +1,6 @@
 **Lightweight library that discovers available [PSR-6 Cache](https://www.php-fig.org/psr/psr-6/) implementations by searching for a list of well-known classes that implement the relevant interface, and returns an instance of the first one that is found.**
 
-This package is part of the [psr-discovery/discovery](https://github.com/psr-discovery/discovery) PSR discovery collection, which also supports [PSR-18 HTTP Clients](https://github.com/psr-discovery/http-client-implementations), [PSR-17 HTTP Factories](https://github.com/psr-discovery/http-factory-implementations), [PSR-14 Event Dispatcher](https://github.com/psr-discovery/event-dispatcher-implementations), [PSR-11 Container](https://github.com/psr-discovery/container-implementations) and [PSR-3 Loggers](https://github.com/psr-discovery/log-implementations).
+This package is part of the [psr-discovery](https://github.com/psr-discovery/discovery) collection, which also supports [PSR-18 HTTP Clients](https://github.com/psr-discovery/http-client-implementations), [PSR-17 HTTP Factories](https://github.com/psr-discovery/http-factory-implementations), [PSR-14 Event Dispatcher](https://github.com/psr-discovery/event-dispatcher-implementations), [PSR-11 Container](https://github.com/psr-discovery/container-implementations) and [PSR-3 Loggers](https://github.com/psr-discovery/log-implementations).
 
 This is largely intended for inclusion in libraries like SDKs that wish to support PSR-6 Caches without requiring hard dependencies on specific implementations or demanding extra configuration by users.
 
@@ -135,7 +135,7 @@ If you wish to prefer a specific implementation over others, you can `prefer()` 
 use PsrDiscovery\Discover;
 use PsrDiscovery\Implementations\Psr6\Caches;
 
-// Prefer the a specific implementation of PSR-14 over others.
+// Prefer the a specific implementation of PSR-6 over others.
 Caches::prefer('league/container');
 
 // Return an instance of League\Container\Container,
@@ -156,7 +156,7 @@ If you wish to force a specific implementation and ignore the rest of the discov
 use PsrDiscovery\Discover;
 use PsrDiscovery\Implementations\Psr6\Caches;
 
-// Only discover a specific implementation of PSR-14.
+// Only discover a specific implementation of PSR-6.
 Caches::use('league/container');
 
 // Return an instance of League\Container\Container,
