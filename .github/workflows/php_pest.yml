@@ -6,7 +6,7 @@ on:
 
 jobs:
   pest:
-    ame: PEST
+    name: PEST
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:
