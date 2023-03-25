@@ -27,50 +27,6 @@ final class Caches extends Implementation implements CachesContract
     /**
      * @psalm-suppress MixedInferredReturnType,MixedReturnStatement
      */
-    public static function candidates(): CandidatesCollection
-    {
-        if (null !== self::$candidates) {
-            return self::$candidates;
-        }
-
-        self::$candidates = CandidatesCollection::create();
-
-        self::$candidates->add(CandidateEntity::create(
-            package: 'psr-mock/cache-implementation',
-            version: '^1.0',
-            builder: static fn (string $class = '\PsrMock\Psr6\Cache'): object => new $class(),
-        ));
-
-        self::$candidates->add(CandidateEntity::create(
-            package: 'cache/array-adapter',
-            version: '^1.0',
-            builder: static fn (string $class = '\Cache\Adapter\PHPArray\ArrayCachePool'): object => new $class(),
-        ));
-
-        self::$candidates->add(CandidateEntity::create(
-            package: 'tedivm/stash',
-            version: '^0.14',
-            builder: static fn (string $class = '\Stash\Pool'): object => new $class(),
-        ));
-
-        self::$candidates->add(CandidateEntity::create(
-            package: 'cache/apcu-adapter',
-            version: '^1.0',
-            builder: static fn (string $class = '\Cache\Adapter\Apcu\ApcuCachePool'): object => new $class(),
-        ));
-
-        self::$candidates->add(CandidateEntity::create(
-            package: 'cache/void-adapter',
-            version: '^1.0',
-            builder: static fn (string $class = '\Cache\Adapter\Void\VoidCachePool'): object => new $class(),
-        ));
-
-        return self::$candidates;
-    }
-
-    /**
-     * @psalm-suppress MixedInferredReturnType,MixedReturnStatement
-     */
     public static function allCandidates(): CandidatesCollection
     {
         if (null !== self::$extendedCandidates) {
@@ -183,6 +139,50 @@ final class Caches extends Implementation implements CachesContract
         ));
 
         return self::$extendedCandidates;
+    }
+
+    /**
+     * @psalm-suppress MixedInferredReturnType,MixedReturnStatement
+     */
+    public static function candidates(): CandidatesCollection
+    {
+        if (null !== self::$candidates) {
+            return self::$candidates;
+        }
+
+        self::$candidates = CandidatesCollection::create();
+
+        self::$candidates->add(CandidateEntity::create(
+            package: 'psr-mock/cache-implementation',
+            version: '^1.0',
+            builder: static fn (string $class = '\PsrMock\Psr6\Cache'): object => new $class(),
+        ));
+
+        self::$candidates->add(CandidateEntity::create(
+            package: 'cache/array-adapter',
+            version: '^1.0',
+            builder: static fn (string $class = '\Cache\Adapter\PHPArray\ArrayCachePool'): object => new $class(),
+        ));
+
+        self::$candidates->add(CandidateEntity::create(
+            package: 'tedivm/stash',
+            version: '^0.14',
+            builder: static fn (string $class = '\Stash\Pool'): object => new $class(),
+        ));
+
+        self::$candidates->add(CandidateEntity::create(
+            package: 'cache/apcu-adapter',
+            version: '^1.0',
+            builder: static fn (string $class = '\Cache\Adapter\Apcu\ApcuCachePool'): object => new $class(),
+        ));
+
+        self::$candidates->add(CandidateEntity::create(
+            package: 'cache/void-adapter',
+            version: '^1.0',
+            builder: static fn (string $class = '\Cache\Adapter\Void\VoidCachePool'): object => new $class(),
+        ));
+
+        return self::$candidates;
     }
 
     /**

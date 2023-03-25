@@ -19,14 +19,14 @@ interface CachesContract extends ImplementationContract
     public static function add(CandidateEntity $candidate): void;
 
     /**
-     * Return potential candidates that can be instantiated automatically.
-     */
-    public static function candidates(): CandidatesCollection;
-
-    /**
      * Return all potential candidates, including those that cannot be instantiated automatically.
      */
     public static function allCandidates(): CandidatesCollection;
+
+    /**
+     * Return potential candidates that can be instantiated automatically.
+     */
+    public static function candidates(): CandidatesCollection;
 
     /**
      * Discover and instantiate a matching implementation.
