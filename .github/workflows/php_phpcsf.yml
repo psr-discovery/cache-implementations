@@ -1,20 +1,12 @@
 on:
   pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
-      - ready_for_review
-      - converted_to_draft
-      - review_requested
   push:
     branches:
       - 1.x
 
 jobs:
-  run:
-    name: php-cs-fixer
+  phpcsf:
+    name: PHP CS Fixer
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:
@@ -44,9 +36,4 @@ jobs:
 
       - run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - run: vendor/bin/pest --order-by random --compact
-
-      - uses: codecov/codecov-action@v3
-        with:
-          directory: ./coverage/
-          flags: unittests
+      - run: vendor/bin/php-cs-fixer fix src --dry-run --diff

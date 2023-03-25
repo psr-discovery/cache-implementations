@@ -1,20 +1,12 @@
 on:
   pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
-      - ready_for_review
-      - converted_to_draft
-      - review_requested
   push:
     branches:
       - 1.x
 
 jobs:
-  run:
-    name: php-cs-fixer
+  pest:
+    ame: PEST
     runs-on: ${{ matrix.operating-systems }}
 
     strategy:
@@ -32,6 +24,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: pcov
+          extensions: mbstring
 
       - id: composer-cache
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
@@ -44,4 +37,9 @@ jobs:
 
       - run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - run: vendor/bin/php-cs-fixer fix src --dry-run --diff
+      - run: vendor/bin/pest --order-by random --compact
+
+      - uses: codecov/codecov-action@v3
+        with:
+          directory: ./coverage/
+          flags: unittests
