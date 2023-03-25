@@ -24,9 +24,7 @@ Successful discovery requires the presence of a compatible implementation in the
 
 ## Implementations
 
-The discovery of available implementations is based on [a list of well-known libraries](https://packagist.org/providers/psr/cache-implementation) that support the `psr/cache-implementation` interface.
-
-The following implementations are discovered and instantiated automatically:
+The following `psr/cache-implementation` implementations are discovered and instantiated automatically:
 
 -   [cache/apcu-adapter](https://github.com/php-cache/apcu-adapter) ^1.0
 -   [cache/array-adapter](https://github.com/php-cache/array-adapter) ^1.0
