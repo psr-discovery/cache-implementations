@@ -26,7 +26,7 @@ Successful discovery requires the presence of a compatible implementation in the
 
 The discovery of available implementations is based on [a list of well-known libraries](https://packagist.org/providers/psr/cache-implementation) that support the `psr/cache-implementation` interface.
 
-The following implementations are available with no configuration:
+The following implementations are discovered and instantiated automatically:
 
 -   [cache/apcu-adapter](https://github.com/php-cache/apcu-adapter) ^1.0
 -   [cache/array-adapter](https://github.com/php-cache/array-adapter) ^1.0
@@ -73,6 +73,18 @@ use PsrDiscovery\Discover;
 $cache = Discover::cache();
 
 $cache->set('foo', 'bar');
+```
+
+You can also use `Discover::caches()` to retrieve an array with all discovered implementations. This is useful if you want to support implementations that can't be instantiated without configuration.
+
+```php
+use PsrDiscovery\Discover;
+
+$caches = Discover::caches();
+
+foreach ($caches as $cache) {
+    echo sprintf('Discovered %s v%s', $cache->getPackage(), $cache->getVersion());
+}
 ```
 
 ## Handling Failures
