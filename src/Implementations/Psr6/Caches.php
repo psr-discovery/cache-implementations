@@ -13,10 +13,13 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Caches extends Implementation implements CachesContract
 {
-    private static ?CandidatesCollection   $candidates         = null;
+    private static ?CandidatesCollection   $candidates = null;
+
     private static ?CandidatesCollection   $extendedCandidates = null;
-    private static ?CacheItemPoolInterface $singleton          = null;
-    private static ?CacheItemPoolInterface $using              = null;
+
+    private static ?CacheItemPoolInterface $singleton = null;
+
+    private static ?CacheItemPoolInterface $using = null;
 
     public static function add(CandidateEntity $candidate): void
     {
@@ -29,7 +32,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (null !== self::$extendedCandidates) {
+        if (self::$extendedCandidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -146,7 +149,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (null !== self::$candidates) {
+        if (self::$candidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -190,7 +193,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function discover(): ?CacheItemPoolInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof \Psr\Cache\CacheItemPoolInterface) {
             return self::$using;
         }
 
@@ -218,7 +221,7 @@ final class Caches extends Implementation implements CachesContract
 
     public static function singleton(): ?CacheItemPoolInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof \Psr\Cache\CacheItemPoolInterface) {
             return self::$using;
         }
 
@@ -228,6 +231,6 @@ final class Caches extends Implementation implements CachesContract
     public static function use(?CacheItemPoolInterface $instance): void
     {
         self::$singleton = $instance;
-        self::$using     = $instance;
+        self::$using = $instance;
     }
 }
