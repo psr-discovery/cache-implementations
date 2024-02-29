@@ -41,13 +41,13 @@ final class Caches extends Implementation implements CachesContract
 
         self::$extendedCandidates->add(CandidateEntity::create(
             package: 'symfony/cache',
-            version: '^3.1 | ^4.0 | ^5.0 | ^6.0',
+            version: '^3.1 | ^4.0 | ^5.0 | ^6.0 | ^7.0',
             builder: static fn () => null,
         ));
 
         self::$extendedCandidates->add(CandidateEntity::create(
             package: 'symfony/symfony',
-            version: '^3.1.4 | ^4.0 | ^5.0 | ^6.0',
+            version: '^3.1.4 | ^4.0 | ^5.0 | ^6.0 | ^7.0',
             builder: static fn () => null,
         ));
 
