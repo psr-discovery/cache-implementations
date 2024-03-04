@@ -32,7 +32,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (self::$extendedCandidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
+        if (self::$extendedCandidates instanceof CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -149,7 +149,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (self::$candidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
+        if (self::$candidates instanceof CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -193,7 +193,7 @@ final class Caches extends Implementation implements CachesContract
      */
     public static function discover(): ?CacheItemPoolInterface
     {
-        if (self::$using instanceof \Psr\Cache\CacheItemPoolInterface) {
+        if (self::$using instanceof CacheItemPoolInterface) {
             return self::$using;
         }
 
@@ -221,7 +221,7 @@ final class Caches extends Implementation implements CachesContract
 
     public static function singleton(): ?CacheItemPoolInterface
     {
-        if (self::$using instanceof \Psr\Cache\CacheItemPoolInterface) {
+        if (self::$using instanceof CacheItemPoolInterface) {
             return self::$using;
         }
 
