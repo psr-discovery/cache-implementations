@@ -46,8 +46,8 @@ The following implementations can be discovered, but require manual instantiatio
 -   [matthiasmullie/scrapbook](https://github.com/matthiasmullie/scrapbook) ^1.0
 -   [neos/cache](https://github.com/neos/cache) ^4.0
 -   [psx/cache](https://github.com/apioo/psx-cache) ^1.0
--   [symfony/cache](https://github.com/symfony/cache) ^3.1 | ^4.0 | ^5.0 | ^6.0
--   [symfony/symfony](https://github.com/symfony/symfony) ^3.1.4 | ^4.0 | ^5.0 | ^6.0
+-   [symfony/cache](https://github.com/symfony/cache) ^3.1 | ^4.0 | ^5.0 | ^6.0 | ^7.0
+-   [symfony/symfony](https://github.com/symfony/symfony) ^3.1.4 | ^4.0 | ^5.0 | ^6.0 | ^7.0
 -   [tedivm/stash](https://github.com/tedious/Stash) ^0.14
 
 The following mock implementations are also available:
