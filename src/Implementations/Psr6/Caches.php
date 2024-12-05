@@ -88,12 +88,6 @@ final class Caches extends Implementation implements CachesContract
         ));
 
         self::$extendedCandidates->add(CandidateEntity::create(
-            package: 'cache/memcached-adapter',
-            version: '^1.0',
-            builder: static fn () => null,
-        ));
-
-        self::$extendedCandidates->add(CandidateEntity::create(
             package: 'matthiasmullie/scrapbook',
             version: '^1.0',
             builder: static fn () => null,

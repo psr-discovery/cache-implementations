@@ -37,7 +37,7 @@ The following implementations can be discovered, but require manual instantiatio
 -   [cache/chain-adapter](https://github.com/php-cache/chain-adapter) ^1.0
 -   [cache/doctrine-adapter](https://github.com/php-cache/doctrine-adapter) ^1.0
 -   [cache/filesystem-adapter](https://github.com/php-cache/filesystem-adapter) ^1.0
--   [cache/memcache-adapter](https://github.com/php-cache/memcache-adapter) ^1.
+-   [cache/memcache-adapter](https://github.com/php-cache/memcache-adapter) ^1.0
 -   [cache/memcached-adapter](https://github.com/php-cache/memcached-adapter) ^1.0
 -   [cache/mongodb-adapter](https://github.com/php-cache/mongodb-adapter) ^1.0
 -   [cache/predis-adapter](https://github.com/php-cache/predis-adapter) ^1.0
