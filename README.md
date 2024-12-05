@@ -42,9 +42,9 @@ The following implementations can be discovered, but require manual instantiatio
 -   [cache/mongodb-adapter](https://github.com/php-cache/mongodb-adapter) ^1.0
 -   [cache/predis-adapter](https://github.com/php-cache/predis-adapter) ^1.0
 -   [cache/redis-adapter](https://github.com/php-cache/redis-adapter) ^1.0
--   [laminas/laminas-cache](https://github.com/laminas/laminas-cache) ^2.8 | ^3.0
+-   [laminas/laminas-cache](https://github.com/laminas/laminas-cache) ^2.8 | ^3.0 | ^4.0
 -   [matthiasmullie/scrapbook](https://github.com/matthiasmullie/scrapbook) ^1.0
--   [neos/cache](https://github.com/neos/cache) ^4.0
+-   [neos/cache](https://github.com/neos/cache) ^4.0 | ^ 5.0 | ^ 6.0 | ^ 7.0 | ^ 8.0
 -   [psx/cache](https://github.com/apioo/psx-cache) ^1.0
 -   [symfony/cache](https://github.com/symfony/cache) ^3.1 | ^4.0 | ^5.0 | ^6.0 | ^7.0
 -   [symfony/symfony](https://github.com/symfony/symfony) ^3.1.4 | ^4.0 | ^5.0 | ^6.0 | ^7.0

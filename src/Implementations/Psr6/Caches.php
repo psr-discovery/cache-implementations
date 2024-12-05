@@ -53,7 +53,7 @@ final class Caches extends Implementation implements CachesContract
 
         self::$extendedCandidates->add(CandidateEntity::create(
             package: 'laminas/laminas-cache',
-            version: '^2.8 | ^3.0',
+            version: '^2.8 | ^3.0 | ^4.0',
             builder: static fn () => null,
         ));
 
@@ -95,7 +95,7 @@ final class Caches extends Implementation implements CachesContract
 
         self::$extendedCandidates->add(CandidateEntity::create(
             package: 'neos/cache',
-            version: '^4.0',
+            version: '^4.0 | ^5.0 | ^6.0| ^7.0| ^8.0',
             builder: static fn () => null,
         ));
 

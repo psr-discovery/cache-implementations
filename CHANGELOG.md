@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.2.0] - 2024-12-05
 
+### Added
+
+-   Expand `laminas/laminas-cache` support to also include `^4.0`
+-   Expand `neos/cache` support to also include `^5.0 | ^6.0| ^7.0| ^8.0`
+
 ### Changed
 
 -   Bump minimum supported PHP version to 8.2.
